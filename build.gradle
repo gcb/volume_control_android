@@ -7,6 +7,7 @@ buildscript {
     }
 
     dependencies {
+        // stuck on 6.5 because of java 1_8
         classpath 'com.android.tools.build:gradle:6.5'
 
         // NOTE: Do not place your application dependencies here; they belong
