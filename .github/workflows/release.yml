@@ -1,6 +1,6 @@
 
 name: meh
-run-name: ${{ github.actor }} is building on MS dime.
+run-name: ${{ github.actor }} pushed on any branch
 on: [push]
 jobs:
   maybe-build-android:
