@@ -2,7 +2,7 @@
 name: push
 run-name: ${{ github.actor }} pushed on any branch
 on: [push]
-
+jobs:
   Gradle:
     runs-on: ubuntu-latest
     steps:
