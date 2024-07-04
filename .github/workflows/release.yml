@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: sparkfabrik/android-build-action@v1.5.0
         with:
-          project-path: ./
+          project-path: ../
           output-path: my-app.apk
           browserstack-upload: false
           #browserstack-username: ${{ secrets.BROWSERSTACK_USERNAME }}
