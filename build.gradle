@@ -7,8 +7,8 @@ buildscript {
     }
 
     dependencies {
-        // stuck on 6.5 because of java 1_8
-        classpath 'com.android.tools.build:gradle:6.5'
+        // https://developer.android.com/build/releases/gradle-plugin
+        classpath 'com.android.tools.build:gradle:8.5' // min gradle 8.7
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
