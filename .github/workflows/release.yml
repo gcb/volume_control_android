@@ -1,6 +1,7 @@
 
 name: push
-run-name: ${{ github.actor }} pushed on a branch
+run-name: ${{ github.actor }} pushed on a branch: ${{ github.event.head_commit.message }}
+
 on: [push]
 jobs:
   Gradle:
@@ -19,4 +20,4 @@ jobs:
           build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
           build-scan-terms-of-use-agree: "yes"
       - name: Run build
-        run: ./gradlew build --scan
+        run: ./gradlew build --debug --stacktrace
