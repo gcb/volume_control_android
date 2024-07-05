@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:hint="@string/volume_profile_name_placeholder"
+                android:inputType="textShortMessage|textAutoCorrect"
                 android:singleLine="true"
                 android:textSize="21sp" />
 
