@@ -42,7 +42,8 @@ dependencies {
     implementation "androidx.appcompat:appcompat-resources:$appcompat_version"
 
     //implementation 'androidx.annotation:annotation:1.2.0'
-    testImplementation 'junit:junit:5.10.0'
+
+    // testImplementation 'junit:junit:5.10.3'
 
     def acraVersion = '5.11.3'
 
