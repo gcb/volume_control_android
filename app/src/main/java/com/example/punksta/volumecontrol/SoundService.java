@@ -105,7 +105,7 @@ public class SoundService extends Service {
         }
 
 
-        views.setTextViewText(R.id.volume_title, capitalize(typeName) + " " + (currentLevel - minLevel) + "/" + (maxLevel - minLevel));
+        views.setTextViewText(R.id.volume_title, typeName + " " + (currentLevel - minLevel) + "/" + (maxLevel - minLevel));
 
 
         views.setOnClickPendingIntent(
@@ -183,9 +183,9 @@ public class SoundService extends Service {
         return builder.build();
     }
 
-    private static String capitalize(String str) {
-        return str.substring(0, 1).toUpperCase() + str.substring(1);
-    }
+    //private static String capitalize(String str) {
+    //    return str.substring(0, 1).toUpperCase() + str.substring(1);
+    //}
 
     public static Intent getIntentForProfile(Context content, SoundProfile profile) {
         Intent result = new Intent(content, SoundService.class);
