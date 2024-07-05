@@ -26,3 +26,8 @@ jobs:
           build-scan-terms-of-use-agree: "yes"
       - name: Run build
         run: gradle build -x test #--debug --stacktrace
+
+# on terminal
+# sdk use java 17.0.11-ms
+# gradle build -x test
+
