@@ -30,9 +30,13 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    // https://developer.android.com/reference/tools/gradle-api/8.3/null/com/android/build/api/dsl/LintOptions
     lintOptions {
-        disable 'GoogleAppIndexingWarning'
         showAll true
+        explainIssues true
+        textReport true
+        textOutput 'stdout'
+        disable 'GoogleAppIndexingWarning'
     }
 }
 

@@ -251,7 +251,7 @@ public class SoundService extends Service {
                 if (startService) {
                     startForeground(
                             staticNotificationNumber,
-                            n
+                            n, FOREGROUND_SERVICE_TYPE_SPECIAL_USE
                     );
                 } else {
                     notificationManagerCompat.notify(staticNotificationNumber,
