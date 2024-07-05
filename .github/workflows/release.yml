@@ -19,7 +19,8 @@ jobs:
           dependency-graph: generate
           # ^  [disabled, generate, generate-and-submit, generate-and-upload, download-and-submit, clear]. The default value is 'disabled'.
           # submit to where? upload to where?
-          validate-wrappers: true
+          #validate-wrappers: true
+          # ^ fails if missing in repo but using valid from system path :/
           build-scan-publish: true
           build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
           build-scan-terms-of-use-agree: "yes"
