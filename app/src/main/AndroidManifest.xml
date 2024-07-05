@@ -14,6 +14,7 @@
         uses-sdk:minSdkVersion 15 cannot be smaller than version 21 declared in library [androidx.appcompat:appcompat-resources:1.7.0] /home/runner/.gradle/caches/8.8/transforms/4618e701db60d038a38e2db5629a83e4/transformed/jetified-appcompat-resources-1.7.0/AndroidManifest.xml as the library might be using APIs not available in 15
         -->
     <uses-sdk tools:overrideLibrary="androidx.appcompat.resources" />
+    <uses-sdk tools:overrideLibrary="androidx.appcompat" />
 
     <uses-permission android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
