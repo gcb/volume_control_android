@@ -1,5 +1,7 @@
 package com.punksta.apps.libs;
 
+import android.annotation.SuppressLint;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -75,7 +77,7 @@ public class VolumeControl {
         return mediaManager.getStreamVolume(type);
     }
 
-
+    @SuppressLint("WrongConstant,UnspecifiedRegisterReceiverFlag") // see "4",  registerReceiver < 26
     public void registerVolumeListener(int type, final VolumeListener volumeListener, boolean sendCurrentValue) {
         boolean firstAudioType = listenerSet.isEmpty();
         boolean isFirstListener = !listenerSet.containsKey(type);
@@ -90,7 +92,11 @@ public class VolumeControl {
             if (audioObserver == null) {
                 audioObserver = new AudioObserver();
             }
-            context.registerReceiver(audioObserver, intentFilter);
+            if(Build.VERSION.SDK_INT >= 26){
+               context.registerReceiver(audioObserver, intentFilter, 4); // 4=RECEIVER_NOT_EXPORTED fucking google forgot about appcompat
+            }else{
+                context.registerReceiver(audioObserver, intentFilter);
+            }
         }
 
         if (sendCurrentValue)

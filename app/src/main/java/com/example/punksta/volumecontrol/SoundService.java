@@ -7,7 +7,6 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
@@ -150,7 +149,7 @@ public class SoundService extends Service {
 
                 int requestId = PROFILE_ID_PREFIX + profile.id;
 
-                pendingIntent = PendingIntent.getService(context, requestId, i, 0);
+                pendingIntent = PendingIntent.getService(context, requestId, i, PendingIntent.FLAG_IMMUTABLE);
                 profileViews.setOnClickPendingIntent(R.id.notification_profile_title, pendingIntent);
                 remoteViews.addView(R.id.notifications_user_profiles, profileViews);
             }
@@ -165,7 +164,7 @@ public class SoundService extends Service {
                 }
             }
 
-            remoteViews.setOnClickPendingIntent(R.id.remove_notification_action, PendingIntent.getService(context, 100, getStopIntent(context), 0));
+            remoteViews.setOnClickPendingIntent(R.id.remove_notification_action, PendingIntent.getService(context, 100, getStopIntent(context), PendingIntent.FLAG_IMMUTABLE));
         }
         builder
                 .setContentTitle(context.getString(R.string.app_name))
@@ -173,7 +172,7 @@ public class SoundService extends Service {
                 .setContentText(context.getString(R.string.notification_widget))
                 .setSmallIcon(R.drawable.notification_icon)
                 .setTicker(context.getString(R.string.app_name))
-                .setContentIntent(PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), 0));
+                .setContentIntent(PendingIntent.getActivity(context, 0, new Intent(context, MainActivity.class), PendingIntent.FLAG_IMMUTABLE));
 
 
         if ((volumeTypesToShow != null && volumeTypesToShow.size() > 0) || (profiles != null && profiles.length > 0)) {
@@ -252,7 +251,7 @@ public class SoundService extends Service {
                 if (startService) {
                     startForeground(
                             staticNotificationNumber,
-                            n, FOREGROUND_SERVICE_TYPE_SPECIAL_USE
+                            n
                     );
                 } else {
                     notificationManagerCompat.notify(staticNotificationNumber,
