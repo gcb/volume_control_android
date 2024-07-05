@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    // Set as the same as targetSdkVersion
+    compileSdkVersion 35
     buildToolsVersion '34.0.0'
     namespace "com.example.punksta.volumecontrol"
 
