@@ -8,7 +8,8 @@ android {
 
     defaultConfig {
         applicationId "com.punksta.apps.volumecontrol"
-        minSdkVersion 15
+        // minSdkVersion 15 <-- to enable 15 again, need to figure out why Manifest.xml's tools:overrideLibrary is not working.
+        minSdkVersion 21
         targetSdkVersion 35
         versionCode 33
         versionName "2.6.1"
