@@ -26,8 +26,8 @@ android {
     // 1_8 is required for ACRA bellow... (wait, i don't think its used...)
     compileOptions {
         encoding = 'UTF-8'
-        // sourceCompatibility JavaVersion.VERSION_1_8
-        // targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
     lintOptions {
@@ -45,5 +45,16 @@ dependencies {
     testImplementation 'junit:junit:5.10.0'
 
     def acraVersion = '5.11.3'
+
+    // I have no idea what uses kotlin, but we get shit on builds without forcing this
+    // error: Duplicate class kotlin.collections.jdk8.CollectionsJDK8Kt found...
+    constraints {
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
+            because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
+        }
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0") {
+            because("kotlin-stdlib-jdk8 is now a part of kotlin-stdlib")
+        }
+    }
 
 }
