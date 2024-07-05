@@ -53,6 +53,7 @@ public class MainActivity extends BaseActivity {
     };
 
     public static Intent createOpenProfileIntent(Context context, SoundProfile profile) {
+        DynamicShortcutManager.reportUsage(context, profile);
         Intent intent1 = new Intent(context.getApplicationContext(), MainActivity.class);
         intent1.setAction(Intent.ACTION_VIEW);
         intent1.putExtra(PROFILE_ID, profile.id);
