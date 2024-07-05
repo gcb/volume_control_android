@@ -19,7 +19,7 @@ android {
         release {
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -48,6 +48,7 @@ dependencies {
 
     // I have no idea what uses kotlin, but we get shit on builds without forcing this
     // error: Duplicate class kotlin.collections.jdk8.CollectionsJDK8Kt found...
+    // https://stackoverflow.com/a/75298544/183132
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {
             because("kotlin-stdlib-jdk7 is now a part of kotlin-stdlib")
