@@ -8,6 +8,13 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
 
+    <!-- newer appcompat prevents us from using minSdk=15... but we are sure to
+        not be using anything newer since this code always had minsdk=15... so we
+        might be able to safely ignore it here. Not adding this line generate the build erro:
+        uses-sdk:minSdkVersion 15 cannot be smaller than version 21 declared in library [androidx.appcompat:appcompat-resources:1.7.0] /home/runner/.gradle/caches/8.8/transforms/4618e701db60d038a38e2db5629a83e4/transformed/jetified-appcompat-resources-1.7.0/AndroidManifest.xml as the library might be using APIs not available in 15
+        -->
+    <uses-sdk tools:overrideLibrary="androidx.appcompat.resources" />
+
     <uses-permission android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
 
