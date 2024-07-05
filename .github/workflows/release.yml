@@ -26,3 +26,5 @@ jobs:
           build-scan-terms-of-use-agree: "yes"
       - name: Run build
         run: gradle build -x test #--debug --stacktrace
+      - name: lint logs
+        run: cat '/home/runner/work/volume_control_android/volume_control_android/app/build/intermediates/lint_intermediate_text_report/debug/lintReportDebug/lint-results-debug.txt'
