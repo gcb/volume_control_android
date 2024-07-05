@@ -1,5 +1,6 @@
 package com.example.punksta.volumecontrol;
 
+import java.util.Locale;
 import android.Manifest;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -192,7 +193,7 @@ public class SoundService extends Service {
     }
 
     private static String capitalize(String str) {
-        return str.substring(0, 1).toUpperCase() + str.substring(1);
+        return str.substring(0, 1).toUpperCase(Locale.getDefault()) + str.substring(1);
     }
 
     public static Intent getIntentForProfile(Context content, SoundProfile profile) {
